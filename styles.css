@@ -1,5 +1,4 @@
 .generator {
-  outline: 2px dotted red;
   margin: 0 auto;
   padding-bottom: 10px;
   font-family: 'Roboto', "Arial", sans-serif;
@@ -15,7 +14,6 @@
 }
 
 .generator__password {
-  outline: 2px dotted blue;
   display: flex;
   align-items: center;
   padding-left: 10px;
@@ -36,7 +34,6 @@
 }
 
 .generator__settings {
-  outline: 2px dotted green;
   width: 100%;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
@@ -49,7 +46,6 @@
 }
 
 .generator__settings-list {
-  outline: 2px dotted yellow;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -63,7 +59,7 @@
 
 .generator__settings-item:first-child {
   padding: 10px;
-  border-top: 1px solid #00FA9A;
+  border-top: 1px solid #000000;
 }
 
 .generator__set-option {
