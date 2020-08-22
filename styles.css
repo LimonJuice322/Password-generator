@@ -1,96 +1,112 @@
-main {
-  display: flex;
-  justify-content: center;
-}
-
 .generator {
-  font-family: 'Roboto', sans-serif;
-  background-color: #DC143C;
-  color: #FFFFFF;
+  outline: 2px dotted red;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  font-family: 'Roboto', "Arial", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   width: 520px;
-  border: 2px solid #00FA9A;
+  border: 2px solid #000000;
 }
 
-.password {
+.generator__header {
+  text-align: center;
+}
+
+.generator__password {
+  outline: 2px dotted blue;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
+  align-items: center;
   padding-left: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
 }
 
-.pass {
-  width: 340px;
+.generator__password-label {
+  padding-right: 10px;
+}
+
+.generator__password-input[type="text"] {
+  flex-grow: 1;
   padding: 5px;
+  font: inherit;
+}
+
+.generator__password-length {
+  font: inherit;
+}
+
+.generator__settings {
+  outline: 2px dotted green;
+  width: 100%;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
   border-radius: 5px;
   border: none;
-  outline: none;
 }
 
-#length {
-  outline: none;
+.generator__settings-header {
+  text-align: center;
 }
 
-ul {
-  width: 100%;
+.generator__settings-list {
+  outline: 2px dotted yellow;
   margin: 0;
   padding: 0;
   list-style: none;
+  padding-bottom: 10px;
 }
 
-li {
+.generator__settings-item {
   margin: 0;
-  border-bottom: 2px solid #00FA9A;
+  border-bottom: 1px solid #000000;
 }
 
-li:first-child {
+.generator__settings-item:first-child {
   padding: 10px;
-  border-top: 2px solid #00FA9A;
+  border-top: 1px solid #00FA9A;
 }
 
-label {
+.generator__set-option {
   display: block;
   margin: 0;
   padding: 10px;
 }
 
-label:hover {
+.generator__set-option:hover {
   cursor: pointer;
-  background-color: #191970;
+  color: #ffffff;
+  background-color: #000000;
 }
 
-span {
+.generator__opt-description {
   padding-left: 20px;
 }
 
-button {
+.generator__btn {
+  display: block;
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
-  border: 2px solid #191970;
+  border: 2px solid #000000;
   padding: 10px;
   margin: 10px;
-  color: #191970;
+  color: #000000;
   background-color: #FFFFFF;
   border-radius: 8px;
   outline: none;
 }
 
-button:hover {
-  background-color: #191970;
+.generator__btn--generate {
+  margin: 0 auto;
+}
+
+.generator__btn:hover {
+  background-color: #000000;
   color: #FFFFFF;
   cursor: pointer;
 }
 
-.checkbox {
-  --first-color: #FFFFFF;
+.generator__set-option {
+  --first-color: #FF6347;
   --second-color: #D3D3D3;
   --third-color: #7FFF00;
   --fourth-color: #A9A9A9;
@@ -100,11 +116,11 @@ button:hover {
   --duration: 0.1s;
 }
 
-.check {
+.generator__check {
   display: none;
 }
 
-.check_div {
+.generator__check-div {
   display: inline-block;
   position: relative;
   width: var(--width);
@@ -114,15 +130,15 @@ button:hover {
   transition: var(--duration);
 }
 
-.check:checked ~ .check_div {
+.generator__check:checked ~ .generator__check-div {
   background-color: var(--third-color);
 }
 
-.check:checked ~ .check_div::before {
+.generator__check:checked ~ .generator__check-div::before {
   left: calc(var(--width) - var(--height) + var(--offset));
 }
 
-.check_div::before {
+.generator__check-div::before {
   content: '';
   position: absolute;
   top: var(--offset);
