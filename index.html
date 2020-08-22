@@ -7,47 +7,54 @@
   </head>
   <body>
     <main>
-      <div class="generator">
-        <h1>Password generator</h1>
-        <div class="password">
-          Password: <input class="pass" type="text" maxlength="30">
-          <button id="copy" type="button">Copy</button>
+      <section class="generator">
+        <h1 class="generator__header">Password generator</h1>
+        <div class="generator__password">
+          <label class="generator__password-label">Password:</label>
+          <input class="generator__password-input" type="text" maxlength="30">
+          <button class="generator__btn" id="copy" type="button">Copy</button>
         </div>
-        <h2>Settings</h2>
-        <ul>
-          <li>Password length: <input id="length" type="number" min="0" max="30"></li>
-          <li>
-            <label class="checkbox">
-              <input class="check" type="checkbox" value="lowercase">
-              <div class="check_div"></div>
-              <span>Lower Case (a-z)</span>
-            </label>
-          </li>
-          <li>
-            <label class="checkbox">
-              <input class="check" type="checkbox" value="uppercase">
-              <div class="check_div"></div>
-              <span>Upper Case (A-Z)</span>
-            </label>
-          </li>
-          <li>
-            <label class="checkbox">
-              <input class="check" type="checkbox" value="numbers">
-              <div class="check_div"></div>
-              <span>Numbers (0-9)</span>
-            </label>
-          </li>
-          <li>
-            <label class="checkbox">
-              <input class="check" type="checkbox" value="symbols">
-              <div class="check_div"></div>
-              <span>Symbols (%, #, etc.)</span>
-            </label>
-          </li>
-        </ul>
-        <button id="Gen" type="button">Generate</button>
-      </div>
+        <section class="generator__settings">
+          <h2 class="generator__settings-header">Settings</h2>
+          <ul class="generator__settings-list">
+            <li class="generator__settings-item">
+              <label for="length">Password length:</label>
+              <input class="generator__password-length" id="length" type="number" min="0" max="30">
+            </li>
+            <div class="check_div"></div>
+            <li class="generator__settings-item">
+              <label class="generator__set-option">
+                <input class="generator__check" type="checkbox" value="lowercase">
+                <div class="generator__check-div"></div>
+                <span class="generator__opt-description">Lower Case (a-z)</span>
+              </label>
+            </li>
+            <li class="generator__settings-item">
+              <label class="generator__set-option">
+                <input class="generator__check" type="checkbox" value="uppercase">
+                <div class="generator__check-div"></div>
+                <span class="generator__opt-description">Upper Case (A-Z)</span>
+              </label>
+            </li>
+            <li class="generator__settings-item">
+              <label class="generator__set-option">
+                <input class="generator__check" type="checkbox" value="numbers">
+                <div class="generator__check-div"></div>
+                <span class="generator__opt-description">Numbers (0-9)</span>
+              </label>
+            </li>
+            <li class="generator__settings-item">
+              <label class="generator__set-option">
+                <input class="generator__check" type="checkbox" value="symbols">
+                <div class="generator__check-div"></div>
+                <span class="generator__opt-description">Symbols (%, #, etc.)</span>
+              </label>
+            </li>
+          </ul>
+        </section>
+        <button class="generator__btn generator__btn--generate" id="gen" type="button">Generate</button>
+      </section>
     </main>
+    <script src="script.js"></script>
   </body>
-  <script src="main.js"></script>
 </html>

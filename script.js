@@ -9,7 +9,7 @@ const letters = {
 }
 
 // Settings for generator
-const checks = {
+let checks = {
   lowercase: false,
   uppercase: false,
   numbers: false,
@@ -21,27 +21,18 @@ function getRand(max) {
   return Math.floor(Math.random() * Math.floor(max))
 }
 
-let checkboxes = document.querySelectorAll('.check');
+let checkboxes = document.querySelectorAll('.generator__check');
 // Add handlers to checkboxes (to set settings after click)
-checkboxes.forEach(ch => ch.addEventListener('click', function() {
-  let val = ch.value;
-  if (ch.checked) {
-    checks[val] = true;
-    ch.parentNode.classList.add('selected');
-  } else {
-    checks[val] = false;
-    ch.parentNode.classList.remove('selected');
-  }
-}))
+checkboxes.forEach(checkbox => checkbox.addEventListener('click', () => checkbox.checked ? checks[checkbox.value] = true : checks[checkbox.value] = false));
 
 // Password generator
 function pass_generator() {
   // Get text field for password
-  const pass = document.querySelector('.pass');
+  const pass = document.querySelector('.generator__password-input');
 
   // Get password length
-  const pass_length = document.getElementById('length').value;
-  if (pass_length == 0) {
+  const pass_length = document.querySelector('.generator__password-length').value;
+  if (pass_length === 0) {
     alert('Enter password length');
     return false;
   } else if (pass_length > 30) {
@@ -55,7 +46,7 @@ function pass_generator() {
   for (let setting of Object.keys(checks)) {
     if (checks[setting] == true) settings.push(letters[setting]);
   }
-  if (settings.length == 0) {
+  if (settings.length === 0) {
     alert('Set the settings');
     return false;
   }
@@ -75,13 +66,13 @@ function pass_generator() {
 
 // Copy password using the button
 function copy_pass() {
-  let password = document.querySelector('.pass');
+  let password = document.querySelector('.generator__password-input');
   password.select();
   document.execCommand("copy");
 }
 
 // Add handler to button 'generate'
-const generate_btn = document.getElementById('Gen');
+const generate_btn = document.getElementById('gen');
 generate_btn.addEventListener('click', pass_generator);
 
 // Add handler to button 'copy'
